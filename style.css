@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.phone-wrapper {
+    background-color: rgba(207, 207, 207, 0.9);
+
+}
+
+.phone {
+    color: red;
+    text-align: right;
+    padding: 9px;
+    width: 957px;
+    margin: auto;
+    font-size: 0.8rem;
+}
+
+.menu-wrapper {
+    background-color: rgba(252, 252, 252, 0.9);
+}
+
+.main-menu {
+    width: 957px;
+    margin: auto;
+    background-color: rgba(252, 252, 252, 0.9);
+}
+
+.top-wrapper {
+    position: fixed;
+    width: 100%;
+
+}
+
+.title {
+    margin: 0;
+    font-weight: bold;
+    float: left;
+    padding: 20px;
+    line-height: 1.4rem;
+    font-size: 1.2rem;
+    color: rgb(55, 55, 55);
+}
+
+.orange {
+    color: #EC4A34;
+    font-weight: bold;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+#service {
+    font-weight: normal;
+    font-size: 0.7rem;
+}
+
+.main-menu ul {
+    text-align: right;
+    width: 100%;
+    margin: 0;
+    padding-bottom: 27px;
+    padding-top: 21px;
+}
+
+.main-menu li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 20px 0 20px 0;
+    font-size: 0.8rem;
+
+}
+
+.main-menu a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.9em;
+    padding: 20px 0 20px 20px;
+
+}
+
+.photo-wrapper {
+    padding-top: 129px;
+}
+
+.photo {
+    background-image: url("https://static.wixstatic.com/media/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.background {
+    background-color: rgba(207, 207, 207, 0.7);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 59%;
+}
+
+.info-wrapper {
+    width: 957px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+    padding-left: 20px;
+}
+
+.info-title {
+    font-weight: bold;
+    font-size: 1.9rem;
+    padding-top: 188px;
+}
+
+.info-size {
+    width: 250px;
+}
+.info {
+    padding-top: 69px;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+}
+
+.apointment-button {
+    padding-top: 51px;
+    padding-bottom: 235px;
+}
+
+#apointment {
+    background-color: rgba(245, 106, 86, 1);
+    border: 1px solid transparent;
+    color: white;
+    padding: 15px 20px;
+    transition: 1s;
+}
+
+#apointment:hover {
+    background-color: rgba(202, 41, 19, 1);
+}
+
