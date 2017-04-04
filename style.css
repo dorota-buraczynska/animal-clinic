@@ -102,7 +102,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    right: 60%;
+    width: calc(50% - 200px);
 }
 
 .info-wrapper {
@@ -243,4 +243,8 @@ text-align: right;
     font-size: 0.9rem;
     padding-bottom: 32px;
     line-height: 1.3rem;
+}
+
+.contact-wrapper {
+    position: relative;
 }
