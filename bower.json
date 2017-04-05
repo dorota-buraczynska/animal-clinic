@@ -1,0 +1,21 @@
+{
+  "name": "animalClinic",
+  "homepage": "https://github.com/dorota-buraczynska/animal-clinic",
+  "authors": [
+    "Dorota Buraczyńska <dorota.buraczynska@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "Font-Awesome#^4.7.0"
+  }
+}
