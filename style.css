@@ -11,12 +11,17 @@ body {
 
 }
 
+.container {
+    width: 960px;
+    margin: auto;
+}
+
+
+
 .phone {
     color: red;
     text-align: right;
     padding: 9px 0 9px 9px;
-    width: 957px;
-    margin: auto;
     font-size: 0.8rem;
 }
 
@@ -24,20 +29,13 @@ body {
     background-color: rgba(252, 252, 252, 0.9);
 }
 
-.main-menu {
-    width: 957px;
-    margin: auto;
-}
-
 .top-wrapper {
     position: fixed;
     width: 100%;
     z-index: 999;
-
 }
 
 .title {
-    margin: 0;
     font-weight: bold;
     float: left;
     padding-top: 20px;
@@ -69,7 +67,6 @@ body {
 }
 
 .main-menu li {
-    list-style-type: none;
     display: inline-block;
     padding: 20px 0 20px 0;
     font-size: 0.8rem;
@@ -79,7 +76,6 @@ body {
 .main-menu a {
     text-decoration: none;
     color: black;
-    font-size: 0.9em;
     padding: 20px 0 20px 20px;
 
 }
@@ -104,18 +100,16 @@ body {
     left: 0;
     width: calc(50% - 200px);
     z-index: 1;
+    min-width: 260px;
 }
 
 .info-wrapper {
-    width: 957px;
-    margin: auto;
+
     position: relative;
     z-index: 2;
 }
 
-.info-title {
-    font-weight: bold;
-    font-size: 1.9rem;
+.section-title--info {
     padding-top: 188px;
 }
 
@@ -150,36 +144,20 @@ body {
     position: relative;
 }
 
-.service-title {
-    display: inline-block;
+.service-info-wrapper {
+
+    padding-top: 38px;
+    padding-bottom: 93px;
+}
+
+.section-title--service {
     padding-top: 57px;
-    position: relative;
-    z-index: 2;
 }
 
 .services {
     display: inline-block;
     width: 671px;
-text-align: right;
-
-
-}
-
-
-.service-info-wrapper {
-    width: 957px;
-    margin: auto;
-    padding-top: 38px;
-    padding-bottom: 93px;
-}
-
-.service-title {
-    width: 281px;
-    vertical-align: top;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: black;
-    display: inline-block;
+    text-align: right;
 }
 
 .service {
@@ -223,19 +201,6 @@ text-align: right;
     padding-bottom: 120px;
 }
 
-.about-clinic-title {
-    font-weight: bold;
-    display: inline-block;
-    width: 281px;
-    vertical-align: top;
-    font-size: 2.2rem;
-}
-
-.about-clinic {
-    width: 957px;
-    margin: auto;
-}
-
 .about-clinic-text-wrapper {
     display: inline-block;
     width: 671px;
@@ -258,6 +223,7 @@ text-align: right;
 .contact-wrapper .background {
     background-color: white;
 }
+
 .form-message {
     display: inline-block;
 }
@@ -271,12 +237,7 @@ text-align: right;
     text-align: right;
 }
 
-.contact-info-wrapper {
-    width: 957px;
-    margin: auto;
-}
-
-.contact-title {
+.section-title {
     width: 281px;
     vertical-align: top;
     font-weight: bold;
@@ -297,7 +258,7 @@ text-align: right;
 }
 
 .address {
-    border-right: 1px solid grey;
+    border-right: 1px solid #c1baba;
     padding-left: 57px;
     padding-right: 47px;
     font-weight: bold;
@@ -307,6 +268,7 @@ text-align: right;
 
 .address-wrapper p {
     padding-bottom: 40px;
+    line-height: 1.4rem;
 }
 
 .hours {
@@ -349,4 +311,24 @@ textarea {
 .map-wrapper {
     padding-left: 57px;
     padding-bottom: 76px;
+}
+
+.bottom {
+    text-align: center;
+    background-color: rgb(0, 153, 255);
+    color: white;
+}
+
+.fa {
+    display: block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 3.1rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.text {
+    font-size: 1.2rem;
+    padding-bottom: 10px;
 }
