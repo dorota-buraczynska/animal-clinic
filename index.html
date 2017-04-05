@@ -44,7 +44,7 @@
                     to tell a story and let your users know a little more about you
                 </div>
                 <div class="appointment-button">
-                    <button id="appointment">BOOK AN APPOINTMENT</button>
+                    <button class="appointment">BOOK AN APPOINTMENT</button>
                 </div>
             </div>
         </div>
@@ -143,15 +143,67 @@
 <div class="contact-wrapper">
     <div class="background"></div>
     <div class="contact-info-wrapper">
-        <div class="contact-title">KEEP<br><span class="normal">IN TOUCH</span> </div>
-        <div class="address-wrapper">
-            <div class="address"></div>
-            <div class="hours"></div>
-        </div>
-        <div class="map"></div>
-        <h1>CONTACT <span class="normal">US</span> </h1>
+        <div class="contact-title">KEEP<br><span class="normal">IN TOUCH</span></div>
+        <div class="details-wrapper">
+            <div class="address-wrapper">
+                <div class="address">
+                    <p>OUR <span class="normal">ADDRESS</span></p>
+                    <p><span class="normal">500 Terry Francois St. San Francisco, CA<br>94158</span></p>
+                    <p>Email:<span class="normal">info@mysite.com</span></p>
+                    <p>Tel: <span class="normal">123-456-7890</span></p>
+                </div>
+                <div class="hours">
+                    <p>OPENING <span class="normal">HOURS</span></p>
+                    <p>7:00 AM - 10:00 PM<br><span class="normal">Monday - Saturday</span></p>
+                    <p>10:00 AM - 6:00 PM<br><span class="normal">Sunday</span></p>
+                </div>
+            </div>
+            <div class="map-wrapper">
+                <div id="map"></div>
+            </div>
+            <h1>CONTACT <span class="normal">US</span></h1>
+            <div class="form-personal-details">
+                <form id="personal-details">
+                    <div class="data">
+                        <label><input type="text" name="name" placeholder="Name" size="40"></label><br>
+                        <label><input type="email" name="Email" placeholder="Email" size="40"></label><br>
+                        <label><input type="text" name="subject" placeholder="Subject" size="40"></label>
+                    </div>
+                    <div class="form-message">
+                        <textarea rows="6" cols="30" placeholder="Message"></textarea>
+                    </div>
+                    <div class="send-button">
+                        <button class="appointment" type="submit" value="SEND">SEND</button>
+                    </div>
+                </form>
+            </div>
 
+
+        </div>
     </div>
 </div>
+<script>
+
+    function initMap() {
+        var position = {lat: 37.770069, lng: -122.387336};
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 15,
+            center: position,
+            zoomControl: true,
+            scaleControl: false,
+            mapTypeControl: true,
+            fullscreenControl: true,
+            streetViewControl: true
+        });
+        var marker = new google.maps.Marker({
+            position: position,
+            map: map
+        });
+    }
+
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZzyUpnaDI3xoPGCILVgEeKH6kyP2hac4&callback=initMap"></script>
 </body>
 </html>

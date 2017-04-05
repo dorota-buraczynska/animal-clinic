@@ -14,7 +14,7 @@ body {
 .phone {
     color: red;
     text-align: right;
-    padding: 9px;
+    padding: 9px 0 9px 9px;
     width: 957px;
     margin: auto;
     font-size: 0.8rem;
@@ -40,7 +40,7 @@ body {
     margin: 0;
     font-weight: bold;
     float: left;
-    padding: 20px;
+    padding-top: 20px;
     line-height: 1.4rem;
     font-size: 1.2rem;
     color: rgb(55, 55, 55);
@@ -103,6 +103,7 @@ body {
     top: 0;
     left: 0;
     width: calc(50% - 200px);
+    z-index: 1;
 }
 
 .info-wrapper {
@@ -110,7 +111,6 @@ body {
     margin: auto;
     position: relative;
     z-index: 2;
-    padding-left: 20px;
 }
 
 .info-title {
@@ -134,7 +134,7 @@ body {
     padding-bottom: 235px;
 }
 
-#appointment {
+.appointment {
     background-color: rgba(245, 106, 86, 1);
     border: 1px solid transparent;
     color: white;
@@ -142,18 +142,19 @@ body {
     transition: 1s;
 }
 
-#appointment:hover {
+.appointment:hover {
     background-color: rgba(202, 41, 19, 1);
 }
 
 .service-wrapper {
     position: relative;
-    padding-left: 20px;
 }
 
 .service-title {
     display: inline-block;
     padding-top: 57px;
+    position: relative;
+    z-index: 2;
 }
 
 .services {
@@ -211,6 +212,8 @@ text-align: right;
     display: inline-block;
     text-align: left;
     vertical-align: top;
+    padding-left: 66px;
+    padding-right: 12px;
 }
 
 .about-clinic-wrapper {
@@ -223,7 +226,7 @@ text-align: right;
 .about-clinic-title {
     font-weight: bold;
     display: inline-block;
-    width: 321px;
+    width: 281px;
     vertical-align: top;
     font-size: 2.2rem;
 }
@@ -231,20 +234,119 @@ text-align: right;
 .about-clinic {
     width: 957px;
     margin: auto;
-    padding-left: 20px;
 }
 
 .about-clinic-text-wrapper {
     display: inline-block;
-    width: 611px;
+    width: 671px;
 }
 
 .about-clinic-text p {
     font-size: 0.9rem;
     padding-bottom: 32px;
+    padding-left: 60px;
     line-height: 1.3rem;
 }
 
 .contact-wrapper {
     position: relative;
+    padding-top: 111px;
+    padding-bottom: 82px;
+    background-color: rgba(207, 207, 207, 0.5);
+}
+
+.contact-wrapper .background {
+    background-color: white;
+}
+.form-message {
+    display: inline-block;
+}
+
+.data {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.send-button {
+    text-align: right;
+}
+
+.contact-info-wrapper {
+    width: 957px;
+    margin: auto;
+}
+
+.contact-title {
+    width: 281px;
+    vertical-align: top;
+    font-weight: bold;
+    font-size: 2.2rem;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+
+.details-wrapper {
+    display: inline-block;
+    width: 671px;
+
+}
+
+.address-wrapper {
+    padding-bottom: 50px;
+}
+
+.address {
+    border-right: 1px solid grey;
+    padding-left: 57px;
+    padding-right: 47px;
+    font-weight: bold;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.address-wrapper p {
+    padding-bottom: 40px;
+}
+
+.hours {
+    padding-left: 62px;
+    padding-right: 62px;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.contact-wrapper h1 {
+    padding: 30px 30px 30px 57px;
+}
+
+input[type="text"], input[type="email"] {
+    padding: 6px 0 7px 6px;
+    margin-bottom: 6px;
+    border: transparent;
+}
+
+textarea {
+    padding: 6px 11px 0 6px;
+    margin-left: 2px;
+    border: transparent;
+}
+
+.form-personal-details {
+    padding-left: 57px;
+}
+
+.send-button .appointment {
+    padding: 10px 12px;
+}
+
+#map {
+    width: 597px;
+    height: 197px;
+    border: 2px solid white;
+}
+
+.map-wrapper {
+    padding-left: 57px;
+    padding-bottom: 76px;
 }
