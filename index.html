@@ -4,12 +4,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Animal Clinik</title>
+    <title>Animal Clinic</title>
     <link href="html5reset-1.6.1.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
-
+    <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 </head>
 <body>
 <div class="top-wrapper">
@@ -23,17 +24,17 @@
             </div>
 
             <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">OUR SERVICE</a></li>
-                <li><a href="#">ABOUT OUR CLINIC</a></li>
-                <li><a href="#">KEEP IN TOUCH</a></li>
-                <li><a href="#">BOOK NOW</a></li>
+                <li><a href="#photo-page">HOME</a></li>
+                <li><a href="#service-page">OUR SERVICE</a></li>
+                <li><a href="#about-clinic-page">ABOUT OUR CLINIC</a></li>
+                <li><a href="#contact-page">KEEP IN TOUCH</a></li>
+                <li><a href="bookNow.html">BOOK NOW</a></li>
             </ul>
         </nav>
     </div>
 </div>
 
-<div class="photo-wrapper">
+<div class="photo-wrapper" id="photo-page">
     <div class="photo">
         <div class="background"></div>
         <div class="info-wrapper container">
@@ -51,6 +52,7 @@
         </div>
     </div>
 </div>
+<div id="service-page"></div>
 <div class="service-wrapper">
     <div class="background"></div>
     <div class="service-info-wrapper container">
@@ -119,7 +121,7 @@
         </div>
     </div>
 </div>
-<div class="about-clinic-wrapper">
+<div class="about-clinic-wrapper" id="about-clinic-page">
     <div class="container">
         <div class="section-title">ABOUT<br><span class="normal">OUR CLINIC</span></div>
         <div class="about-clinic-text-wrapper">
@@ -141,7 +143,7 @@
         </div>
     </div>
 </div>
-<div class="contact-wrapper">
+<div class="contact-wrapper" id="contact-page">
     <div class="background"></div>
     <div class="container">
         <div class="section-title">KEEP<br><span class="normal">IN TOUCH</span></div>
@@ -150,7 +152,8 @@
                 <div class="address">
                     <p>OUR <span class="normal">ADDRESS</span></p>
                     <p><span class="normal">500 Terry Francois St. San Francisco, CA<br>94158</span></p>
-                    <p>Email:<span class="normal">info@mysite.com</span><br>Tel: <span class="normal">123-456-7890</span></p>
+                    <p>Email:<span class="normal">info@mysite.com</span><br>Tel: <span
+                            class="normal">123-456-7890</span></p>
                 </div>
                 <div class="hours">
                     <p>OPENING <span class="normal">HOURS</span></p>
@@ -180,10 +183,12 @@
         </div>
     </div>
 </div>
-<div class="bottom">
-    <div class="sign"><i class="fa fa-angle-up" aria-hidden="true"></i></div>
-    <div class="text">TOP</div>
-</div>
+<footer>
+    <div class="bottom">
+        <div><a href="#photo-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a> </div>
+        <div class="text">TOP</div>
+    </div>
+</footer>
 <script>
 
     function initMap() {
@@ -203,7 +208,40 @@
         });
     }
 
+    $(".main-menu a").on("click", function () {
+        var elementId = $(this).attr('href');
+        var $targetElement = $(elementId);
+        var position = $targetElement.offset();
+        var mainMenuHeight = $('.top-wrapper').height();
 
+        $("html, body").animate({ scrollTop: position.top - mainMenuHeight }, 1500);
+        console.log($targetElement.offset());
+    });
+
+//    $("a[href='#service-page']").click(function() {
+//        $("html, body").animate({ scrollTop: 754 }, 1500);
+//        return false;
+//    });
+//
+//    $("a[href='#about-clinic-page']").click(function() {
+//        $("html, body").animate({ scrollTop: 1493 }, 1500);
+//        return false;
+//    });
+//
+//    $("a[href='#contact-page']").click(function() {
+//        $("html, body").animate({ scrollTop: 2095 }, 1500);
+//        return false;
+//    });
+//
+//    $("a[href='#photo-page']").click(function() {
+//        $("html, body").animate({ scrollTop: 0 }, 1500);
+//        return false;
+//    });
+
+    $('.appointment-button').click(function () {
+        window.location.href = "bookNow.html";
+
+    })
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZzyUpnaDI3xoPGCILVgEeKH6kyP2hac4&callback=initMap"></script>

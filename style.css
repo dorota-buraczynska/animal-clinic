@@ -16,8 +16,6 @@ body {
     margin: auto;
 }
 
-
-
 .phone {
     color: red;
     text-align: right;
@@ -216,7 +214,7 @@ body {
 .contact-wrapper {
     position: relative;
     padding-top: 111px;
-    padding-bottom: 82px;
+    padding-bottom: 141px;
     background-color: rgba(207, 207, 207, 0.5);
 }
 
@@ -313,9 +311,22 @@ textarea {
     padding-bottom: 76px;
 }
 
+footer {
+    position: relative;
+}
+
 .bottom {
     text-align: center;
     background-color: rgb(0, 153, 255);
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 2;
+}
+
+.bottom a {
+    text-decoration: none;
     color: white;
 }
 
@@ -331,4 +342,61 @@ textarea {
 .text {
     font-size: 1.2rem;
     padding-bottom: 10px;
+}
+
+.container--book-now {
+    padding-top: 170px;
+    padding-bottom: 100px;
+}
+
+.section-title--book-now {
+    padding-bottom: 70px;
+}
+
+.offers-wrapper {
+    text-align: right;
+    padding-top: 64px;
+    padding-bottom: 64px;
+    border-top: 1px solid grey;
+}
+
+.offer {
+    display: inline-block;
+    float: left;
+    font-size: 1.3rem;
+    padding-top: 7px;
+    color: rgb(0, 153, 255);
+    cursor: pointer
+}
+
+.price {
+    display: inline-block;
+
+}
+
+.appointment--book-now {
+    display: inline-block;
+    margin-left: 200px;
+    font-size: 1.1rem;
+    padding: 6px 20px;
+}
+
+.information {
+    padding-bottom: 31px;
+    padding-right: 149px;
+    word-wrap: break-word;
+    display: none;
+}
+
+.sign {
+    display: inline-block;
+}
+
+.sign .fa {
+    font-size: 1.7rem;
+    opacity: 1;
+}
+
+.sign-up {
+    transform: rotate(180deg);
 }
