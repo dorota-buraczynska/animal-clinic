@@ -82,12 +82,76 @@ body {
     padding-top: 129px;
 }
 
-.photo {
+.photo  {
     background-image: url("https://static.wixstatic.com/media/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png");
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
+ /*   animation-name: photoSlide;
+    animation-duration: 21s;
+    animation-iteration-count: infinite;*/
+}
+
+/*@keyframes photoSlide {
+    0% {background-image: url("https://static.wixstatic.com/media/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png")}
+    33.3% {background-image: url("https://static.wixstatic.com/media/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png") }
+    66.6% {background-image: url("https://static.wixstatic.com/media/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png")}
+} */
+
+/*@keyframes dotOne {
+    0% {color: orange}
+    33.3% {color: white}
+    66.6% {color: white}
+}
+
+@keyframes dotTwo {
+    0% {color: white}
+    33.3% {color: orange}
+    66.6% {color: white}
+}
+
+@keyframes dotThree {
+    0% {color: white}
+    33.3% {color: white}
+    66.6% {color: orange}
+}
+
+.dots .one {
+    animation-name: dotOne;
+    animation-duration: 21s;
+    animation-iteration-count: infinite;
+}
+
+.dots .two {
+    animation-name: dotTwo;
+    animation-duration: 21s;
+    animation-iteration-count: infinite;
+}
+
+.dots .three {
+    animation-name: dotThree;
+    animation-duration: 21s;
+    animation-iteration-count: infinite;
+}
+*/
+.dots {
+    text-align: center;
+    color: white;
+}
+
+.info-wrapper i.fa.fa-circle {
+    font-size: 1.3rem;
+    display: inline-block;
+    padding: 10px 3px 50px 3px;
+
+}
+
+.orangeDots {
+    font-size: 1.3rem;
+    color: orange;
+    display: inline-block;
+    padding: 10px 3px 50px 3px;
 }
 
 .background {

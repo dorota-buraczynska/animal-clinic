@@ -38,7 +38,7 @@
     <div class="photo">
         <div class="background"></div>
         <div class="info-wrapper container">
-            <div class="info-size col-4">
+            <div class="info-size">
                 <div class="section-title section-title--info">HELLO<br><span class="normal">FRIENDS!</span></div>
                 <div class="info">I'm a paragraph. Clicked here to add your own extra text and edit me. I'm great place
                     for
@@ -48,6 +48,11 @@
                 <div class="appointment-button">
                     <button class="appointment">BOOK AN APPOINTMENT</button>
                 </div>
+            </div>
+            <div class="dots">
+                <i class="fa fa-circle one" aria-hidden="true"></i>
+                <i class="fa fa-circle two" aria-hidden="true"></i>
+                <i class="fa fa-circle three" aria-hidden="true"></i>
             </div>
         </div>
     </div>
@@ -185,11 +190,12 @@
 </div>
 <footer>
     <div class="bottom">
-        <div><a href="#photo-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a> </div>
+        <div><a href="#photo-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
         <div class="text">TOP</div>
     </div>
 </footer>
 <script>
+    var hash = window.location.hash;
 
     function initMap() {
         var position = {lat: 37.770069, lng: -122.387336};
@@ -208,40 +214,113 @@
         });
     }
 
-    $(".main-menu a").on("click", function () {
-        var elementId = $(this).attr('href');
+    var scrollToHash = function (elementId) {
         var $targetElement = $(elementId);
         var position = $targetElement.offset();
         var mainMenuHeight = $('.top-wrapper').height();
 
-        $("html, body").animate({ scrollTop: position.top - mainMenuHeight }, 1500);
-        console.log($targetElement.offset());
+        $("html, body").animate({scrollTop: position.top - mainMenuHeight}, 1500);
+    };
+
+    if (hash) {
+        scrollToHash(hash);
+    }
+
+    $(".main-menu a").on("click", function () {
+        var elementId = $(this).attr('href');
+        scrollToHash(elementId);
     });
 
-//    $("a[href='#service-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 754 }, 1500);
-//        return false;
-//    });
-//
-//    $("a[href='#about-clinic-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 1493 }, 1500);
-//        return false;
-//    });
-//
-//    $("a[href='#contact-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 2095 }, 1500);
-//        return false;
-//    });
-//
-//    $("a[href='#photo-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 0 }, 1500);
-//        return false;
-//    });
+    $('.bottom').click(function () {
+        scrollToHash(hash);
+    });
+
+    //    $("a[href='#service-page']").click(function() {
+    //        $("html, body").animate({ scrollTop: 754 }, 1500);
+    //        return false;
+    //    });
+    //
+    //    $("a[href='#about-clinic-page']").click(function() {
+    //        $("html, body").animate({ scrollTop: 1493 }, 1500);
+    //        return false;
+    //    });
+    //
+    //    $("a[href='#contact-page']").click(function() {
+    //        $("html, body").animate({ scrollTop: 2095 }, 1500);
+    //        return false;
+    //    });
+    //
+    //    $("a[href='#photo-page']").click(function() {
+    //        $("html, body").animate({ scrollTop: 0 }, 1500);
+    //        return false;
+    //    });
 
     $('.appointment-button').click(function () {
         window.location.href = "bookNow.html";
+    });
 
-    })
+
+    $('.dots .one').on('click', function () {
+        $('.photo').css('background-image', 'url("https://static.wixstatic.com/media/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png")');
+        $(this)
+            .addClass('orangeDots')
+            .siblings().removeClass('orangeDots');
+    });
+
+    $('.dots .two').on('click', function () {
+        $('.photo').css('background-image', 'url("https://static.wixstatic.com/media/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png")');
+        $(this)
+            .addClass('orangeDots')
+            .siblings().removeClass('orangeDots');
+    });
+
+    $('.dots .three').on('click', function () {
+        $('.photo').css('background-image', 'url("https://static.wixstatic.com/media/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png")');
+        $(this)
+            .addClass('orangeDots')
+            .siblings().removeClass('orangeDots');
+    });
+
+    var images = [
+        "https://static.wixstatic.com/media/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png",
+        "https://static.wixstatic.com/media/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png",
+        "https://static.wixstatic.com/media/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png"
+    ];
+
+    /* var currimg = 0;
+
+     var imageSlide = function () {
+     $('.photo').animate({opacity: 1}, 2000, function () {
+     $('.photo').animate({opacity: 0.7}, 2000, function () {
+     currimg++;
+     if (currimg > images.length -1) {
+     currimg = 0;
+     }
+     var newImage = images[currimg];
+     $('.photo').css("background-image", "url("+newImage+")");
+     $('.photo').animate({opacity: 1}, 2000, function () {
+     setTimeout(imageSlide, 3000);
+     });
+     });
+     });
+
+     };
+     setTimeout(imageSlide, 3000 ); */
+
+    $(function () {
+        var i = 0;
+        $(".photo").css("background-image", "url(" + images[i] + ")");
+        setInterval(function () {
+            i++;
+            if (i == images.length) {
+                i = 0;
+            }
+            $(".photo").animate({opacity: 0.3}, 3000, function () {
+                $(this).css("background-image", "url("+ images[i] + ")");
+                $(this).animate ({opacity: 1});
+            });
+        }, 5000);
+    });
 </script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZzyUpnaDI3xoPGCILVgEeKH6kyP2hac4&callback=initMap"></script>

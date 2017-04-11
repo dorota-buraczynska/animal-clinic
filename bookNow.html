@@ -151,28 +151,11 @@
         $offer.find('.sign').toggleClass('sign-up');
     });
 
-    $("a[href='#book-now-page']").click(function() {
+    $("a[href='#book-now-page']").click(function(event) {
+        event.preventDefault();
+        event.stopPropagation();
         $("html, body").animate({ scrollTop: 0 }, 1500);
-        return false;
     });
-
-    $("a[href='index.html#service-page']").click(function() {
-        window.location.href = "index.html";
-        $("html, body").animate({ scrollTop: 754 }, 1500);
-        return false;
-    });
-
-
-    $("a[href='#about-clinic-page']").click(function() {
-        $("html, body").animate({ scrollTop: 1493 }, 1500);
-        return false;
-    });
-
-    $("a[href='#contact-page']").click(function() {
-        $("html, body").animate({ scrollTop: 2095 }, 1500);
-        return false;
-    });
-
 </script>
 </body>
 </html>
