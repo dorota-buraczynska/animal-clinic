@@ -93,6 +93,7 @@ body {
     height: 100%;
     background-position: 50% 50%;
     background-size: cover;
+    opacity: 1;
 
 }
 
@@ -103,7 +104,7 @@ body {
     height: 100%;
     background-position: 50% 50%;
     background-size: cover;
-
+    opacity: 0;
 }
 
 .photo-dog {
@@ -113,88 +114,49 @@ body {
     height: 100%;
     background-position: 50% 50%;
     background-size: cover;
-
+    opacity: 0;
 }
-
-
-/*
-@keyframes photoSlide {
-    0% {
-        background-image: url("https://static.wixstatic.com/media/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png")
-    }
-    33.33% {
-        background-image: url("https://static.wixstatic.com/media/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_6c88ff4eb9044d8c82e62d775d3972d5.png")
-    }
-    66.66% {
-        background-image: url("https://static.wixstatic.com/media/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_9cbbd63c1f6148c1a118403576b54a31.png")
-    }
-    100% {
-        background-image: url("https://static.wixstatic.com/media/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png/v1/fill/w_1920,h_680,al_c,q_85,usm_0.66_1.00_0.01/5bfb6f_90c125e2391d488096d6d6996bf3d1e0.png")
-    }
-}
-
-@keyframes dotOne {
-    0% {
-        color: orange
-    }
-    33.3% {
-        color: white
-    }
-    66.6% {
-        color: white
-    }
-    100% {
-        color: orange
-    }
-}
-
-@keyframes dotTwo {
-    0% {
-        color: white
-    }
-    33.3% {
-        color: orange
-    }
-    66.6% {
-        color: white
-    }
-    100% {
-        color: white
-    }
-}
-
-@keyframes dotThree {
-    0% {
-        color: white
-    }
-    33.3% {
-        color: white
-    }
-    66.6% {
-        color: orange
-    }
-    100% {
-        color: white
-    }
-}*/
 
 .dots {
-    text-align: center;
-    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-bottom: 30px;
+    cursor: pointer;
 }
 
-.info-wrapper i.fa.fa-circle {
-    font-size: 1.3rem;
+.dot {
+    height: 20px;
+    width: 20px;
+    margin: 0 2px;
+    background-color: white;
+    border-radius: 50%;
     display: inline-block;
-    padding: 10px 3px 50px 3px;
+    z-index: 3;
+    position: relative;
 
 }
 
-.orangeDots {
-    font-size: 1.3rem;
-    color: orange;
-    display: inline-block;
-    padding: 10px 3px 50px 3px;
+.active {
+    background-color: orange;
+}
+
+.slide-active {
+    opacity: 1;
+}
+
+/*.slide {*/
+/*animation-name: fade;*/
+/*animation-duration: 1.5s;*/
+/*}*/
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
 }
 
 .background {
@@ -233,12 +195,18 @@ body {
     padding-bottom: 235px;
 }
 
+.appointment a {
+    text-decoration: none;
+    color: white;
+}
+
 .appointment {
     background-color: rgba(245, 106, 86, 1);
     border: 1px solid transparent;
     color: white;
     padding: 15px 20px;
     transition: 1s;
+    cursor: pointer;
 }
 
 .appointment:hover {
@@ -506,4 +474,119 @@ footer {
 
 .sign-up {
     transform: rotate(180deg);
+}
+
+
+
+.container--schedule {
+    padding-top: 170px;
+    padding-bottom: 100px;
+    display: none;
+}
+
+.container--schedule h1 {
+    font-weight: normal;
+    font-size: 1.3rem;
+    padding-top: 25px;
+    padding-bottom: 42px;
+}
+
+i.fa.fa-angle-left {
+    display: inline-block;
+    color: #03A9F4;
+    font-size: 2.3rem;
+    cursor: pointer;
+}
+
+.options a {
+    vertical-align: super;
+    padding-left: 10px;
+    color: #03A9F4;
+    cursor: pointer;
+}
+
+i.fa.fa-clock-o {
+    color: #03A9F4;
+    font-size: 1.8rem;
+    font-weight: normal;
+    cursor: pointer;
+    display: inline-block;
+    padding-bottom: 33px;
+}
+
+.underline:hover {
+    text-decoration: underline;
+}
+
+/*calendar*/
+.ui-datepicker th {
+    padding: 30px;
+}
+
+.ui-datepicker td {
+    border: 1px solid black;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 40px;
+}
+
+.ui-datepicker td:hover {
+    border: 3px solid red;
+}
+
+
+.ui-datepicker-other-month .ui-datepicker-unselectable .ui-state-disabled td {
+    color: darkgrey;
+}
+
+.ui-datepicker-title {
+    display: inline-block;
+    padding-top: 6px;
+}
+
+a.ui-datepicker-prev.ui-corner-all,
+a.ui-datepicker-next.ui-corner-all {
+    padding: 2px 10px;
+    border: 1px solid black;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+a.ui-datepicker-prev.ui-corner-all {
+    border-right: transparent;
+}
+
+a.ui-datepicker-prev.ui-corner-all:hover,
+a.ui-datepicker-next.ui-corner-all:hover {
+    background-color: black;
+    color: white;
+}
+
+
+a.ui-datepicker-prev.ui-corner-all {
+    position: absolute;
+    left: calc(50% - 293px);
+}
+
+a.ui-datepicker-next.ui-corner-all {
+    position: absolute;
+    left: calc(50% - 262px);
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    color: red;
+}
+
+.ui-datepicker td a {
+    padding-left: 10px;
+    padding-right: 38px;
+    padding-bottom: 31px;
+}
+
+span.ui-state-default {
+    color: darkgrey;
+}
+
+a.ui-state-default {
+    color: black;
+    text-decoration: none;
 }

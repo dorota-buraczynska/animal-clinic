@@ -7,10 +7,10 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 </head>
 <body>
+
 <div class="top-wrapper">
     <div class="phone-wrapper">
         <div class="phone container">CALL US: 123 456 789</div>
@@ -133,29 +133,29 @@
     </div>
 
 </div>
+<div class="container container--schedule">
+    <div class="section-title section-title--book-now">
+        AVAILABLE<br><span class="normal">APPOINTMENTS</span>
+    </div>
+    <div class="options">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <a>Back</a>
+    </div>
+    <h1>Schedule Online</h1>
+    <div class="options">
+        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <a class="underline">Schedule in Our Time Zone: GMT +02:00</a>
+    </div>
+    <div id="calendar"></div>
+</div>
 <footer>
     <div class="bottom">
         <div><a href="#book-now-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
         <div class="text">TOP</div>
     </div>
 </footer>
-<script>
-//    $('div.offers').on('click', function () {
-//        $("#" + $(this).attr('id') + ' .information').slideToggle('3000');
-//        $("#" + $(this).attr('id') + ' .sign').toggleClass('sign-up');
-//    });
-
-    $('.offer').on('click', function () {
-        var $offer = $(this);
-        $offer.closest('.offers').find('.information').slideToggle(1000);
-        $offer.find('.sign').toggleClass('sign-up');
-    });
-
-    $("a[href='#book-now-page']").click(function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        $("html, body").animate({ scrollTop: 0 }, 1500);
-    });
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="bookNow.js"></script>
 </body>
 </html>

@@ -9,8 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="style.css" rel="stylesheet" type="text/css">
-    <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
 </head>
 <body>
 <div class="top-wrapper">
@@ -36,11 +35,16 @@
 
 <div class="photo-wrapper" id="photo-page">
     <div class="photo">
-<div class="photo-container">
-    <div class="photo-orange-cat"></div>
-    <div class="photo-grey-cat"></div>
-    <div class="photo-dog"></div>
-</div>
+        <div class="photo-container">
+            <div class="photo-orange-cat slide slide-active"></div>
+            <div class="photo-grey-cat slide"></div>
+            <div class="photo-dog slide"></div>
+            <div class="dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
         <div class="background"></div>
         <div class="info-wrapper container">
             <div class="info-size">
@@ -51,14 +55,10 @@
                     to tell a story and let your users know a little more about you
                 </div>
                 <div class="appointment-button">
-                    <button class="appointment">BOOK AN APPOINTMENT</button>
+                    <button class="appointment"><a href="bookNow.html"> BOOK AN APPOINTMENT</a></button>
                 </div>
             </div>
-            <div class="dots">
-                <i class="fa fa-circle one" aria-hidden="true"></i>
-                <i class="fa fa-circle two" aria-hidden="true"></i>
-                <i class="fa fa-circle three" aria-hidden="true"></i>
-            </div>
+
         </div>
     </div>
 </div>
@@ -199,101 +199,8 @@
         <div class="text">TOP</div>
     </div>
 </footer>
-<script>
-    var hash = window.location.hash;
-
-    function initMap() {
-        var position = {lat: 37.770069, lng: -122.387336};
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 15,
-            center: position,
-            zoomControl: true,
-            scaleControl: false,
-            mapTypeControl: true,
-            fullscreenControl: true,
-            streetViewControl: true
-        });
-        var marker = new google.maps.Marker({
-            position: position,
-            map: map
-        });
-    }
-
-    var scrollToHash = function (elementId) {
-        var $targetElement = $(elementId);
-        var position = $targetElement.offset();
-        var mainMenuHeight = $('.top-wrapper').height();
-
-        $("html, body").animate({scrollTop: position.top - mainMenuHeight}, 1500);
-    };
-
-    if (hash) {
-        scrollToHash(hash);
-    }
-
-    $(".main-menu a").on("click", function () {
-        var elementId = $(this).attr('href');
-        scrollToHash(elementId);
-    });
-
-    $('.bottom').click(function () {
-        scrollToHash(hash);
-    });
-
-    //    $("a[href='#service-page']").click(function() {
-    //        $("html, body").animate({ scrollTop: 754 }, 1500);
-    //        return false;
-    //    });
-    //
-    //    $("a[href='#about-clinic-page']").click(function() {
-    //        $("html, body").animate({ scrollTop: 1493 }, 1500);
-    //        return false;
-    //    });
-    //
-    //    $("a[href='#contact-page']").click(function() {
-    //        $("html, body").animate({ scrollTop: 2095 }, 1500);
-    //        return false;
-    //    });
-    //
-    //    $("a[href='#photo-page']").click(function() {
-    //        $("html, body").animate({ scrollTop: 0 }, 1500);
-    //        return false;
-    //    });
-
-    $('.appointment-button').click(function () {
-        window.location.href = "bookNow.html";
-    });
-
-    $(".photo-container > div:gt(0)").hide();
-
-    setInterval(function() {
-        $('.photo-container > div:first')
-            .fadeOut(1000)
-            .next()
-            .fadeIn(1000)
-            .end()
-            .appendTo('.photo-container');
-    }, 3000);
-
-
-   $('i').on('click', function () {
-       var $dot = $(this);
-       console.log($dot.index());
-       $dot
-           .addClass('orangeDots')
-           .siblings().removeClass('orangeDots');
-       $dot.closest('.photo').find('.photo-container');
-       if ($dot.index() === 0) {
-          $('.photo-orange-cat').insertBefore('.photo-container > div:eq(1)');
-       } else if ($dot.index() === 1) {
-           $('.photo-grey-cat').insertBefore('.photo-container > div:eq(1)');
-       } else if ($dot.index() === 2) {
-           $('.photo-dog').insertBefore('.photo-container > div:eq(1)');
-       }
-   });
-
-</script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script src="script.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZzyUpnaDI3xoPGCILVgEeKH6kyP2hac4&callback=initMap"></script>
 </body>
 </html>
