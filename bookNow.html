@@ -131,9 +131,9 @@
             debitis ea id labore provident quae reiciendis repellendus temporibus?
         </div>
     </div>
-
 </div>
-<div class="container container--schedule">
+
+<div class="container section-title-wrapper">
     <div class="section-title section-title--book-now">
         AVAILABLE<br><span class="normal">APPOINTMENTS</span>
     </div>
@@ -142,7 +142,8 @@
         <a class="back">Back</a>
     </div>
     <h1>Schedule Online</h1>
-
+</div>
+<div class="container container--schedule">
     <div class="calendar-wrapper">
         <div class="options">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -153,34 +154,6 @@
             <div class="weekly-view">Weekly view</div>
             <i class="fa fa-angle-up" aria-hidden="true"></i>
         </div>
-    </div>
-    <div class="form-container">
-        <div class="section-title section-title--book-now">
-            AVAILABLE<br><span class="normal">APPOINTMENTS</span>
-        </div>
-        <div class="options">
-            <i class="fa fa-angle-left" aria-hidden="true"></i>
-            <a class="back">Back</a>
-        </div>
-        <h1>Schedule Online</h1>
-        <form id="personal-details">
-            <label>
-                *Full Name<br>
-                <input type="text" name="name">
-            </label>
-            <label>
-                *Email<br>
-                <input type="email" name="email">
-            </label>
-            <label>
-                *Phone No.<br>
-                <input type="number" name="phone">
-            </label>
-            <label>
-                Feel free to leave us a message<br>
-                <textarea rows="30" cols="40" name="message"></textarea>
-            </label>
-        </form>
     </div>
     <div class="last-step">
         <div class="last-step-title"></div>
@@ -193,6 +166,7 @@
         </div>
         <button class="appointment appointment--last-step">Next</button>
     </div>
+
     <div class="appointment-hours">
         <div class="morning"><span>Morning</span>
             <div class="hour">10:00 am</div>
@@ -229,6 +203,40 @@
     </div>
 </div>
 
+
+<div class="container form-container">
+    <form id="personal-details">
+        <label>
+            <p>*Full Name</p><br>
+            <input type="text" name="name" size="44">
+        </label><br>
+        <label>
+            <p>*Email</p><br>
+            <input type="email" name="email" size="44">
+        </label><br>
+        <label>
+            <p>*Phone No.</p><br>
+            <input type="text" name="phone" size="44">
+        </label><br>
+        <label>
+            <p>Feel free to leave us a message</p><br>
+            <textarea rows="10" cols="52" name="message"></textarea>
+        </label>
+    </form>
+
+    <div class="form-last-step">
+        <div class="form-last-step-title"></div>
+        <div class="form-last-step-price"></div>
+        <div class="form-date-wrapper">
+            <div class="form-last-step-month"></div>
+            <div class="form-last-step-day"></div>
+            <div class="form-last-step-year"></div>
+            <div class="form-last-step-hour"></div>
+        </div>
+        <button class="appointment appointment--form-last-step">Book it</button>
+    </div>
+    <div><span>*Required Info</span></div>
+</div>
 <footer>
     <div class="bottom">
         <div><a href="#book-now-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
