@@ -139,15 +139,96 @@
     </div>
     <div class="options">
         <i class="fa fa-angle-left" aria-hidden="true"></i>
-        <a>Back</a>
+        <a class="back">Back</a>
     </div>
     <h1>Schedule Online</h1>
-    <div class="options">
-        <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <a class="underline">Schedule in Our Time Zone: GMT +02:00</a>
+
+    <div class="calendar-wrapper">
+        <div class="options">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <a class="underline">Schedule in Our Time Zone: GMT +02:00</a>
+        </div>
+        <div id="calendar"></div>
+        <div class="weekly-view-container">
+            <div class="weekly-view">Weekly view</div>
+            <i class="fa fa-angle-up" aria-hidden="true"></i>
+        </div>
     </div>
-    <div id="calendar"></div>
+    <div class="form-container">
+        <div class="section-title section-title--book-now">
+            AVAILABLE<br><span class="normal">APPOINTMENTS</span>
+        </div>
+        <div class="options">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <a class="back">Back</a>
+        </div>
+        <h1>Schedule Online</h1>
+        <form id="personal-details">
+            <label>
+                *Full Name<br>
+                <input type="text" name="name">
+            </label>
+            <label>
+                *Email<br>
+                <input type="email" name="email">
+            </label>
+            <label>
+                *Phone No.<br>
+                <input type="number" name="phone">
+            </label>
+            <label>
+                Feel free to leave us a message<br>
+                <textarea rows="30" cols="40" name="message"></textarea>
+            </label>
+        </form>
+    </div>
+    <div class="last-step">
+        <div class="last-step-title"></div>
+        <div class="last-step-price"></div>
+        <div class="date-wrapper">
+            <div class="last-step-month"></div>
+            <div class="last-step-day"></div>
+            <div class="last-step-year"></div>
+            <div class="last-step-hour"></div>
+        </div>
+        <button class="appointment appointment--last-step">Next</button>
+    </div>
+    <div class="appointment-hours">
+        <div class="morning"><span>Morning</span>
+            <div class="hour">10:00 am</div>
+            <div class="hour">10:30 am</div>
+            <div class="hour">11:00 am</div>
+            <div class="hour">11.30 am</div>
+        </div>
+        <div class="afternoon"><span>Afternoon</span>
+            <div class="hour">12:00 pm</div>
+            <div class="hour">12:30 pm</div>
+            <div class="hour">1:00 pm</div>
+            <div class="hour">1:30 pm</div>
+            <div class="hour">2:00 pm</div>
+            <div class="hour">2:30 pm</div>
+            <div class="hour">3:00 pm</div>
+            <div class="hour">3:30 pm</div>
+            <div class="hour">4:00 pm</div>
+            <div class="hour">4:30 pm</div>
+        </div>
+        <div class="evening"><span>Evening</span>
+            <div class="hour">5:00 pm</div>
+        </div>
+    </div>
+    <div class="no-available-hours">
+        <div class="morning"><span>Morning</span>
+            <div class="hour hour--no-available">No Available Hours</div>
+        </div>
+        <div class="afternoon"><span>Afternoon</span>
+            <div class="hour hour--no-available">No Available Hours</div>
+        </div>
+        <div class="evening"><span>Evening</span>
+            <div class="hour hour--no-available">No Available Hours</div>
+        </div>
+    </div>
 </div>
+
 <footer>
     <div class="bottom">
         <div><a href="#book-now-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>

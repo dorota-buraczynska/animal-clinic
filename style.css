@@ -518,6 +518,98 @@ i.fa.fa-clock-o {
     text-decoration: underline;
 }
 
+.last-step {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 45px;
+    border: 1px solid black;
+}
+
+.last-step-title {
+    font-size: 1.3rem;
+    padding: 30px 58px 30px 30px;
+}
+
+.last-step-price {
+    padding-bottom: 24px;
+    margin-bottom: 32px;
+    margin-left: 30px;
+    margin-right: 34px;
+    border-bottom: 1px solid black;
+}
+
+.last-step-month {
+    margin-left: 30px;
+    margin-bottom: 37px;
+    display: inline-block;
+}
+
+.last-step-year,
+.last-step-day,
+.last-step-hour {
+    display: inline-block;
+}
+
+
+.appointment--last-step {
+    padding: 10px 80px;
+    margin-left: 30px;
+    margin-bottom: 34px;
+    margin-right: 30px;
+    font-size: 1.2rem;
+}
+
+.calendar-wrapper {
+    display: inline-block;
+}
+
+.morning,
+.afternoon,
+.evening {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.no-available-hours .morning,
+.no-available-hours .afternoon,
+.no-available-hours .evening {
+    margin-right: 0;
+}
+
+
+.hour {
+    padding: 15px 50px;
+    border: 1px solid black;
+    margin-bottom:14px ;
+    cursor: pointer;
+}
+
+.appointment-hours .hour:hover {
+    border: 1px solid red;
+}
+
+
+.hour--no-available {
+    border: none;
+    cursor: text;
+    padding: 15px 38px;
+}
+
+.appointment-hours span,
+.no-available-hours span {
+    margin-bottom: 15px;
+    margin-top: 40px;
+    display: block;
+}
+
+.appointment-hours,
+.no-available-hours {
+    display: none;
+}
+
+
 /*calendar*/
 .ui-datepicker th {
     padding: 30px;
@@ -534,8 +626,7 @@ i.fa.fa-clock-o {
     border: 3px solid red;
 }
 
-
-.ui-datepicker-other-month .ui-datepicker-unselectable .ui-state-disabled td {
+.ui-state-disabled td {
     color: darkgrey;
 }
 
@@ -551,6 +642,7 @@ a.ui-datepicker-next.ui-corner-all {
     font-size: 1.2rem;
     cursor: pointer;
 }
+
 a.ui-datepicker-prev.ui-corner-all {
     border-right: transparent;
 }
@@ -560,7 +652,6 @@ a.ui-datepicker-next.ui-corner-all:hover {
     background-color: black;
     color: white;
 }
-
 
 a.ui-datepicker-prev.ui-corner-all {
     position: absolute;
@@ -576,7 +667,8 @@ a.ui-datepicker-next.ui-corner-all {
     color: red;
 }
 
-.ui-datepicker td a {
+.ui-datepicker td a,
+.ui-datepicker td span {
     padding-left: 10px;
     padding-right: 38px;
     padding-bottom: 31px;
@@ -590,3 +682,37 @@ a.ui-state-default {
     color: black;
     text-decoration: none;
 }
+
+.ui-datepicker-week-end a {
+    color: darkgrey;
+}
+
+.weekly-view-container {
+    color: red;
+    padding-top: 20px;
+    margin-left: calc(50% - 25px);
+}
+
+.weekly-view-container i.fa.fa-angle-up,
+.weekly-view-container i.fa.fa-angle-down {
+    display: inline-block;
+    font-size: 1.3rem;
+    padding-left: 3px;
+
+}
+
+.weekly-view {
+    font-size: 0.9rem;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.monthly-view {
+
+}
+
+.invisible {
+    display: none;
+
+}
+
