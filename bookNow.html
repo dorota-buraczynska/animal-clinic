@@ -159,9 +159,7 @@
         <div class="last-step-title"></div>
         <div class="last-step-price"></div>
         <div class="date-wrapper">
-            <div class="last-step-month"></div>
-            <div class="last-step-day"></div>
-            <div class="last-step-year"></div>
+            <div class="last-step-date"></div>
             <div class="last-step-hour"></div>
         </div>
         <button class="appointment appointment--last-step">Next</button>
@@ -228,12 +226,11 @@
         <div class="form-last-step-title"></div>
         <div class="form-last-step-price"></div>
         <div class="form-date-wrapper">
-            <div class="form-last-step-month"></div>
-            <div class="form-last-step-day"></div>
-            <div class="form-last-step-year"></div>
+            <div class="form-last-step-date"></div>
             <div class="form-last-step-hour"></div>
         </div>
-        <button class="appointment appointment--form-last-step">Book it</button>
+        <input type="submit" form="personal-details" class="appointment appointment--form-last-step"
+               value="Book it"</input>
     </div>
     <div><span>*Required Info</span></div>
 </div>
@@ -244,7 +241,10 @@
     </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="js/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script
+        src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+        crossorigin="anonymous"></script>
 <script src="bookNow.js"></script>
 </body>
 </html>
