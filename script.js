@@ -1,5 +1,3 @@
-var hash = window.location.hash;
-
 function initMap() {
     var position = {lat: 37.770069, lng: -122.387336};
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -16,6 +14,7 @@ function initMap() {
         map: map
     });
 }
+var hash = window.location.hash;
 
 var scrollToHash = function (elementId) {
     var $targetElement = $(elementId);
@@ -34,30 +33,10 @@ $(".main-menu a").on("click", function () {
     scrollToHash(elementId);
 });
 
-$('.bottom').click(function () {
-    scrollToHash(hash);
+$('.bottom').click(function (event) {
+    event.preventDefault();
+    $("html, body").animate({scrollTop: 0}, 1500);
 });
-
-//    $("a[href='#service-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 754 }, 1500);
-//        return false;
-//    });
-//
-//    $("a[href='#about-clinic-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 1493 }, 1500);
-//        return false;
-//    });
-//
-//    $("a[href='#contact-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 2095 }, 1500);
-//        return false;
-//    });
-//
-//    $("a[href='#photo-page']").click(function() {
-//        $("html, body").animate({ scrollTop: 0 }, 1500);
-//        return false;
-//    });
-
 
 var changeActiveDot = function (index) {
     $('.dot')
@@ -78,69 +57,32 @@ var getCurrentPhotoIndex = function () {
 };
 
 var onDotClick = function (event) {
-
+    clearInterval(autoSlide);
     changeActiveDot($(this).index());
     changeActivePhoto($(this).index());
-
-currentIndex = getCurrentPhotoIndex();
-
+    currentIndex = getCurrentPhotoIndex();
+    startSlideshow();
 };
 
 $('.dot').on('click', onDotClick);
 
-
+var autoSlide;
 var currentIndex = 0;
-var photos = $('.photo-container div');
-var dots = $('.dots span');
+var photos = $('.slide');
 
-var cyclePhotos = function () {
-  var photo = $('.photo-container div').eq(currentIndex);
-  photos.removeClass('slide-active');
-  photo.addClass('slide-active');
+var startSlideshow = function () {
+    autoSlide = setInterval(function () {
+        currentIndex++;
+        if (currentIndex > photos.length - 1) {
+            currentIndex = 0;
+        }
+        console.log(currentIndex);
+        changeActivePhoto(currentIndex);
+        changeActiveDot(currentIndex);
+
+    }, 4000);
 };
 
-var cycleDots = function () {
-  var dot = $('.dots span').eq(currentIndex);
-  dots.removeClass('active');
-  dot.addClass('active');
-};
-
-var autoSlide = setInterval (function () {
-   currentIndex++;
-   if (currentIndex > photos.length -1) {
-       currentIndex = 0;
-   }
-    cycleDots();
-   cyclePhotos();
-
-}, 3000);
-
-// slideIndex = 0;
-// var stopped = false;
-// showSlides();
-//
-// function showSlides() {
-//     if (stopped) {
-//         return;
-//     }
-//     var i;
-//     var slides = $('.slide');
-//     var dots = $('.dot');
-//     for (i = 0; i < slides.length; i++) {
-//         $(slides[i]).removeClass('slide-active');
-//     }
-//     slideIndex++;
-//     if (slideIndex > slides.length) {
-//         slideIndex = 1
-//     }
-//     for (i = 0; i < dots.length; i++) {
-//         $(dots[i]).removeClass('active');
-//     }
-//     $(slides[slideIndex - 1]).addClass('slide-active');
-//     $(dots[slideIndex - 1]).addClass('active');
-//
-//
-//     setTimeout(showSlides, 4000);
-// }
+startSlideshow();
 
 

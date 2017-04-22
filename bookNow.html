@@ -17,8 +17,8 @@
     </div>
     <div class="menu-wrapper">
         <nav class="main-menu container">
-            <div class="title">THE ANIMAL<span class="orange">+</span> <br><span class="normal">CLINIC </span><span
-                    id="service">VET SERVICE</span>
+            <div class="title"><a href="index.html"> THE ANIMAL<span class="orange">+</span> <br><span class="normal">CLINIC </span><span
+                    id="service">VET SERVICE</span></a>
             </div>
 
             <ul>
@@ -137,15 +137,15 @@
     <div class="section-title section-title--book-now">
         AVAILABLE<br><span class="normal">APPOINTMENTS</span>
     </div>
-    <div class="options">
-        <i class="fa fa-angle-left" aria-hidden="true"></i>
-        <a class="back">Back</a>
-    </div>
-    <h1>Schedule Online</h1>
 </div>
 <div class="container container--schedule">
     <div class="calendar-wrapper">
         <div class="options">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <a class="back">Back</a>
+        </div>
+        <h1>Schedule Online</h1>
+        <div  id="" class="options">
             <i class="fa fa-clock-o" aria-hidden="true"></i>
             <a class="underline">Schedule in Our Time Zone: GMT +02:00</a>
         </div>
@@ -166,13 +166,13 @@
     </div>
 
     <div class="appointment-hours">
-        <div class="morning"><span>Morning</span>
+        <div class="morning test"><span>Morning</span>
             <div class="hour">10:00 am</div>
             <div class="hour">10:30 am</div>
             <div class="hour">11:00 am</div>
             <div class="hour">11.30 am</div>
         </div>
-        <div class="afternoon"><span>Afternoon</span>
+        <div class="afternoon test"><span>Afternoon</span>
             <div class="hour">12:00 pm</div>
             <div class="hour">12:30 pm</div>
             <div class="hour">1:00 pm</div>
@@ -184,7 +184,7 @@
             <div class="hour">4:00 pm</div>
             <div class="hour">4:30 pm</div>
         </div>
-        <div class="evening"><span>Evening</span>
+        <div class="evening test"><span>Evening</span>
             <div class="hour">5:00 pm</div>
         </div>
     </div>
@@ -203,18 +203,23 @@
 
 
 <div class="container form-container">
+    <div class="options">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        <a class="back">Back</a>
+    </div>
+    <h1>Schedule Online</h1>
     <form id="personal-details">
-        <label>
-            <p>*Full Name</p><br>
-            <input type="text" name="name" size="44">
+        <label class="required">
+            <p>Full Name</p>
+            <input type="text" id="name" name="name" size="44">
         </label><br>
-        <label>
-            <p>*Email</p><br>
-            <input type="email" name="email" size="44">
+        <label class="required">
+            <p>Email</p>
+            <input type="email" id="email" name="email" size="44">
         </label><br>
-        <label>
-            <p>*Phone No.</p><br>
-            <input type="text" name="phone" size="44">
+        <label class="required">
+            <p>Phone No.</p>
+            <input type="text" name="phone" id="phone" size="44">
         </label><br>
         <label>
             <p>Feel free to leave us a message</p><br>
@@ -230,14 +235,14 @@
             <div class="form-last-step-hour"></div>
         </div>
         <input type="submit" form="personal-details" class="appointment appointment--form-last-step"
-               value="Book it"</input>
+               value="Book it">
     </div>
     <div><span>*Required Info</span></div>
 </div>
 <footer>
     <div class="bottom">
         <div><a href="#book-now-page"><i class="fa fa-angle-up" aria-hidden="true"></i></a></div>
-        <div class="text">TOP</div>
+        <div class="text"><a href="#book-now-page">TOP</a> </div>
     </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>

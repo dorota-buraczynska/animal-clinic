@@ -76,7 +76,10 @@ body {
     text-decoration: none;
     color: black;
     padding: 20px 0 20px 20px;
+}
 
+.title > a {
+    padding: 0;
 }
 
 .photo-wrapper {
@@ -478,14 +481,14 @@ footer {
     transform: rotate(180deg);
 }
 
-
 /*schedule page*/
 .section-title-wrapper {
     padding-top: 170px;
     display: none;
 }
 
-.section-title-wrapper h1 {
+.container--schedule h1,
+.form-container h1 {
     font-weight: normal;
     font-size: 1.3rem;
     padding-top: 25px;
@@ -544,9 +547,13 @@ i.fa.fa-clock-o {
 input[type="text"],
 input[type="email"],
 textarea {
-    background-color: rgba(221,221,221,0.8);
+    background-color: rgba(221, 221, 221, 0.8);
     margin-bottom: 29px;
     font-size: 1.3rem;
+}
+
+input:invalid {
+    border: 1px solid red;
 }
 
 input:focus,
@@ -556,6 +563,10 @@ textarea:focus {
 
 #personal-details p {
     color: dimgrey;
+}
+
+#personal-details .required p::before {
+    content: '*';
 }
 
 .form-last-step {
@@ -588,7 +599,6 @@ textarea:focus {
     display: inline-block;
 }
 
-
 .appointment--form-last-step {
     padding: 10px 80px;
     margin-left: 30px;
@@ -597,11 +607,11 @@ textarea:focus {
     font-size: 1.2rem;
 }
 
-
 .last-step {
     display: inline-block;
     vertical-align: top;
     margin-left: 45px;
+    margin-top: 125px;
     border: 1px solid black;
 }
 
@@ -654,29 +664,36 @@ textarea:focus {
     margin-bottom: 15px;
     text-align: center;
 }
+
 .no-available-hours .morning,
 .no-available-hours .afternoon,
 .no-available-hours .evening {
     margin-right: 0;
 }
 
-
 .hour {
     padding: 15px 50px;
     border: 1px solid black;
-    margin-bottom:14px ;
+    margin-bottom: 14px;
     cursor: pointer;
 }
 
 .appointment-hours .hour:hover {
-    border: 1px solid red;
+    box-shadow:inset 0 0  0 3px red;
+    border-color: red;
+    color: red;
 }
-
 
 .hour--no-available {
     border: none;
     cursor: text;
     padding: 15px 38px;
+}
+
+.hour-border {
+    box-shadow:inset 0 0  0 3px red;
+    border-color: red;
+    color: red;
 }
 
 .appointment-hours span,
@@ -691,22 +708,33 @@ textarea:focus {
     display: none;
 }
 
-
 /*calendar*/
 .ui-datepicker th {
     padding: 30px;
 }
 
 .ui-datepicker td {
-    border: 1px solid black;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 40px;
 }
 
-.ui-datepicker td:hover {
-    border: 3px solid red;
+.ui-datepicker td:first-child {
+    border-left: 1px solid black;
 }
+
+table {
+    border-collapse: separate;
+    border-bottom: 1px solid black;
+}
+
+.ui-datepicker td:hover {
+    box-shadow:inset 0 0  0 3px red;
+    border-color:  red;
+}
+
 
 .ui-state-disabled td {
     color: darkgrey;
@@ -714,7 +742,6 @@ textarea:focus {
 
 .ui-datepicker-title {
     display: inline-block;
-    padding-top: 6px;
 }
 
 a.ui-datepicker-prev.ui-corner-all,
@@ -747,6 +774,12 @@ a.ui-datepicker-next.ui-corner-all {
 
 .ui-datepicker-calendar .ui-state-active {
     color: red;
+
+}
+
+td.ui-datepicker-current-day {
+    box-shadow:inset 0 0  0 2px red;
+    border-color:  red;
 }
 
 .ui-datepicker td a,
@@ -765,13 +798,38 @@ a.ui-state-default {
     text-decoration: none;
 }
 
+.ui-datepicker-today a {
+    color: red;
+    text-decoration: underline;
+}
+
 .ui-datepicker-week-end a {
     color: darkgrey;
 }
 
+.ui-datepicker-buttonpane {
+    display: inline-block;
+    position: absolute;
+    left: calc(50% - 195px);
+    top: 493px;
+    background-color: white;
+    vertical-align: top;
+}
+
+button.ui-datepicker-current {
+    background: none;
+    border: 1px solid black;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+}
+
+span.ui-datepicker-month,
+span.ui-datepicker-year {
+    display: inline-block;
+}
+
 .weekly-view-container {
     color: red;
-    padding-top: 20px;
     margin-left: calc(50% - 25px);
 }
 
@@ -779,7 +837,6 @@ a.ui-state-default {
 .weekly-view-container i.fa.fa-angle-down {
     display: inline-block;
     font-size: 1.3rem;
-    padding-left: 3px;
 
 }
 
@@ -787,10 +844,7 @@ a.ui-state-default {
     font-size: 0.9rem;
     display: inline-block;
     cursor: pointer;
-}
-
-.monthly-view {
-
+    padding: 49px 3px 20px 0px;
 }
 
 .invisible {

@@ -1,8 +1,3 @@
-//    $('div.offers').on('click', function () {
-//        $("#" + $(this).attr('id') + ' .information').slideToggle('3000');
-//        $("#" + $(this).attr('id') + ' .sign').toggleClass('sign-up');
-//    });
-
 $('.offer').on('click', function () {
     var $offer = $(this);
     $offer.closest('.offers').find('.information').slideToggle(1000);
@@ -18,48 +13,59 @@ $("a[href='#book-now-page']").click(function (event) {
 $('#calendar').datepicker({
     prevText: "<",
     nextText: ">",
+    minDate: new Date(),
+    showButtonPanel: true,
     inline: true,
     onSelect: function (date, inst) {
         pickDate(new Date(date));
+        weekend(new Date(date));
+        scrollToElement('.weekly-view');
     },
     firstDay: 1,
     showOtherMonths: true,
     dayNamesMin: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
 
 });
+
+
 // switch book-now-page to schedule page
 $('.appointment--book-now').on('click', function () {
-    $('.container--book-now').css('display', 'none');
-    $('.section-title-wrapper').css('display', 'block');
-    $('.container--schedule').css('display', 'block');
-    $('.form-container').css('display', 'none');
+    $('.container--book-now').hide();
+    $('.section-title-wrapper').show();
+    $('.container--schedule').fadeIn(1500);
     $('.last-step').addClass('disabled');
 });
 
 // back from schedule page to book-now-page
-$('.back').on('click', function () {
-    $('.container--schedule').css('display', 'none');
-    $('.container--book-now').css('display', 'block');
-    $('.section-title-wrapper').css('display', 'none');
-    $('.form-container').css('display', 'none');
+$('.container--schedule a.back').on('click', function () {
+    $('.container--schedule, .section-title-wrapper').hide();
+    $('.container--book-now').fadeIn(1500);
 });
 
+//back from form page to schedule page
+$('.form-container a.back').on('click', function () {
+    $('.container--schedule').fadeIn(1500);
+    $('.container--book-now, .form-container').hide();
+    $('.section-title-wrapper').show();
+});
+
+var changeWeeklyViewText = function (isMonthlyView) {
+
+    $('.weekly-view').text(isMonthlyView ? 'Monthly view' : 'Weekly view');
+    $('.weekly-view-container i')
+        .toggleClass('fa-angle-up', !isMonthlyView)
+        .toggleClass('fa-angle-down', isMonthlyView);
+
+};
 
 // weekly or monthly view of calendar
 $('.weekly-view').on('click', function () {
-    $('.ui-datepicker tr:first-child').siblings().toggleClass('invisible');
+    $('tr').has(' a.ui-state-active').siblings().toggleClass('invisible');
+
     var text = $('.weekly-view').text();
-    if (text == "Weekly view") {
-        $('.weekly-view').text('Monthly view');
-        $('.weekly-view-container i')
-            .removeClass('fa-angle-up')
-            .addClass('fa-angle-down');
-    } else {
-        $('.weekly-view').text('Weekly view');
-        $('.weekly-view-container i')
-            .removeClass('fa-angle-down')
-            .addClass('fa-angle-up');
-    }
+    var isMonthlyView = text == 'Weekly view';
+    changeWeeklyViewText(isMonthlyView);
+    scrollToElement('#calendar');
 });
 
 var formatDate = function (date) {
@@ -67,45 +73,65 @@ var formatDate = function (date) {
     var month = date.getMonth();
     var day = date.getDate();
     var year = date.getFullYear();
+
     return months[month] + " " + day + ", " + year;
 };
 
-
-var pickDate = function (date) {
-    $('.appointment-hours').css('display', 'block');
-    $('.last-step-date').text(formatDate(date));
+var weekend = function (date) {
+    var day = date.getDay();
+    if (day == 6 || day == 0) {
+        $('.appointment-hours').hide();
+        $('.no-available-hours').show();
+    }
 };
 
-//shows hours in weekend
-$('.ui-datepicker-week-end').on('click', function () {
-    $('.no-available-hours').css('display', 'block');
-    $('.appointment-hours').css('display', 'none');
-});
+var pickDate = function (date) {
+    $('.appointment-hours').show();
+    $('.no-available-hours').hide();
+    $('.last-step-date').text(formatDate(date));
+    //
+    var text = $('.weekly-view').text();
+    var isMonthlyView = text == 'Weekly view' && $('tr').hasClass('invisible');
+    changeWeeklyViewText(isMonthlyView);
+};
+
 
 //on schedule page in last-step div show offer name and price
+// $('#book-now-page').on('click', '.appointment--book-now', function () {
+//     var offerNum = $(this).closest('.offers').index();
+//     var offerTitle = $(".container--book-now .offer").eq(offerNum - 1).text();
+//     var offerPrice = $(".container--book-now .price").eq(offerNum - 1).text();
+//     $('.last-step-title').text(offerTitle);
+//     $('.last-step-price').text(offerPrice);
+//
+// });
 $('#book-now-page').on('click', '.appointment--book-now', function () {
-    var offerNum = $(this.closest('.offers')).index();
-    var offerTitle = $(".container--book-now .offer").eq(offerNum - 1).text();
-    var offerPrice = $(".container--book-now .price").eq(offerNum - 1).text();
+    var $offer = $(this).closest('.offers');
+
+    // var offerTitle = $('.offer', $offer).text();
+
+    var offerTitle = $offer.find('.offer').text();
+    var offerPrice = $offer.find('.price').text();
     $('.last-step-title').text(offerTitle);
     $('.last-step-price').text(offerPrice);
-
 });
 
-//shows choose hour in last-step div
+//shows chosen hour in last-step div
 $('.appointment-hours .hour').on('click', function () {
     var hour = $(this).text();
     $('.last-step-hour').text(hour);
     $('.last-step').removeClass('disabled');
-    $('.appointment--last-step').removeClass('disabled');
 
+    $(this).closest('.appointment-hours').find('.hour').removeClass('hour-border');
+    $(this).addClass('hour-border');
 
+    scrollToElement('.last-step');
 });
 
 //switch schedule page to form page
 $('.appointment--last-step').on('click', function () {
-    $('.form-container').css('display', 'block');
-    $('.container--schedule').css('display', 'none');
+    $('.form-container').fadeIn(1500);
+    $('.container--schedule').hide();
     formLastStep();
     $('.form-last-step').addClass('disabled');
 });
@@ -122,7 +148,24 @@ var formLastStep = function () {
     $('.form-last-step-hour').text(hour);
 };
 
+var scrollToElement = function (selector) {
+    var position = $(selector).offset().top;
+    var menuHeight = $('.menu-wrapper').height();
+    $("html, body").animate({scrollTop: position - menuHeight}, 1500);
+};
 
-//
-// $('.appointment--book-now').trigger('click');
-// $('.appointment--last-step').trigger('click');
+var validateForm = function () {
+    var isValid = true;
+    $('.required input').each(function () {
+        if ($(this).val() == '') {
+            isValid = false;
+        }
+    });
+    if (isValid) {
+        $('.form-last-step').removeClass('disabled');
+    }
+};
+
+$('.required input').on('input', function () {
+   validateForm();
+});
