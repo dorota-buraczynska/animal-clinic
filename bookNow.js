@@ -156,12 +156,15 @@ var scrollToElement = function (selector) {
 
 var validateForm = function () {
     var isValid = true;
+    var re  = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var $email = $('.required input[type=email]');
+    var isEmail = re.test($email.val());
     $('.required input').each(function () {
-        if ($(this).val() == '') {
+        if ($(this).val() == '')  {
             isValid = false;
         }
     });
-    if (isValid) {
+    if (isValid && isEmail) {
         $('.form-last-step').removeClass('disabled');
     }
 };

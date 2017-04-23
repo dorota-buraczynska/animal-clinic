@@ -149,20 +149,6 @@ body {
     opacity: 1;
 }
 
-/*.slide {*/
-/*animation-name: fade;*/
-/*animation-duration: 1.5s;*/
-/*}*/
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-    to {
-        opacity: 1
-    }
-}
-
 .background {
     background-color: rgba(207, 207, 207, 0.5);
     height: 100%;
