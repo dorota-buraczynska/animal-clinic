@@ -156,11 +156,11 @@ var scrollToElement = function (selector) {
 
 var validateForm = function () {
     var isValid = true;
-    var re  = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     var $email = $('.required input[type=email]');
     var isEmail = re.test($email.val());
     $('.required input').each(function () {
-        if ($(this).val() == '')  {
+        if ($(this).val() == '') {
             isValid = false;
         }
     });
@@ -170,5 +170,21 @@ var validateForm = function () {
 };
 
 $('.required input').on('input', function () {
-   validateForm();
+    validateForm();
+});
+
+$('#personal-details').on('submit', function (event) {
+    event.preventDefault();
+    var modal = $('.modal');
+    $(modal).css('display', 'block');
+});
+
+$('.close').on('click', function () {
+    $('.modal').css('display', 'none');
+});
+
+$('body').on('click', function (event) {
+    if ($(event.target).is(".modal")) {
+        $('.modal').css('display', 'none');
+    }
 });

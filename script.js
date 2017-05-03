@@ -33,7 +33,7 @@ $(".main-menu a").on("click", function () {
     scrollToHash(elementId);
 });
 
-$('.bottom').click(function (event) {
+$('.bottom').on('click', function (event) {
     event.preventDefault();
     $("html, body").animate({scrollTop: 0}, 1500);
 });
